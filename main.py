@@ -1,15 +1,15 @@
 import sys
 import random
-from PyQt5 import uic
+from UI import Ui_Form
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPainter, QPen, QBrush, QColor
 from PyQt5.QtWidgets import QApplication, QWidget
 
 
-class DrawYellowCircles(QWidget):
+class DrawYellowCircles(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
-        uic.loadUi('UI.ui', self)
+        self.setupUi(self)
 
         self.do_paint = False
         self.pushButton.clicked.connect(self.paint)
